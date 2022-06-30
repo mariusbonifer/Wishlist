@@ -15,7 +15,6 @@ $fileContent = file_get_contents($file);
 $wishes = json_decode($fileContent);
 
 if(isset($_POST["id"])){
-    var_dump($_POST);
     $wishes[$_POST["id"]]->marked = $_POST["state"];
     file_put_contents($file, json_encode($wishes));
     header("Location: ./");
